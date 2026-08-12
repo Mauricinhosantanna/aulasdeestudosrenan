@@ -1,16 +1,14 @@
 import express from 'express' //type module
 // const express = require("express") //type common js
-
-//inicializando o express -new
 const app = express()
 
-app.get('/api/salario', (req, res) => {
-    const  valorhora = Number (req.query.valorhora)
-    const  horasTrabalhadas = Number (req.query.horasTrabalhadas)
-    const salario = valorhora * horasTrabalhadas
-    res.send({message:salario})})
+app.post('/api/somar', (req, res) => {
+    const  num1 =  (req.body.num1)
+    const  num2 =  (req.body.num2)
+    res.send({resultado:num1 + num2})
+})
 
-
+/*
 app.listen(3000, () => {
  console.log('Server is running on http://localhost:3000')
 })
@@ -26,6 +24,13 @@ app.get('/api/peso', (req, res) => {
     res.send({message:media})})
 
 
+app.get('/api/temperatura', (req, res) => {
+    const tempcelsius = Number (req.query.tempcelsius)
+    const tempfahrenheit = (tempcelsius * 9+ 160 ) / 5
+    res.send({message:tempfahrenheit})})
+
+
 app.listen(3000, () => {
  console.log('Server is running on http://localhost:3000')
 })
+ */
