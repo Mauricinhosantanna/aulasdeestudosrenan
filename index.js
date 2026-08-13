@@ -1,12 +1,21 @@
 import express from 'express' //type module
 // const express = require("express") //type common js
 const app = express()
-
+app.use(express.json()) 
 app.post('/api/somar', (req, res) => {
     const  num1 =  (req.body.num1)
     const  num2 =  (req.body.num2)
     res.send({resultado:num1 + num2})
 })
+const app = express()
+app.use(express.json()) 
+app.post('/api/salario', (req, res) => {
+    const  valorHora =  (req.body.valorHora)
+    const  horaTrabalhada =  (req.body.horaTrabalhada)
+    res.send({Salario:valorHora + horaTrabalhada})
+})
+
+
 
 /*
 app.listen(3000, () => {
@@ -30,7 +39,7 @@ app.get('/api/temperatura', (req, res) => {
     res.send({message:tempfahrenheit})})
 
 
+    */
 app.listen(3000, () => {
- console.log('Server is running on http://localhost:3000')
+ console.log('Servidor rodando na porta 3000')
 })
- */
