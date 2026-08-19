@@ -7,14 +7,21 @@ app.post('/api/somar', (req, res) => {
     const  num2 =  (req.body.num2)
     res.send({resultado:num1 + num2})
 })
-const app = express()
-app.use(express.json()) 
+
 app.post('/api/salario', (req, res) => {
     const  valorHora =  (req.body.valorHora)
     const  horaTrabalhada =  (req.body.horaTrabalhada)
-    res.send({Salario:valorHora + horaTrabalhada})
+    res.send({Salario:valorHora * horaTrabalhada})
 })
 
+app.post('/api/media', (req, res) => {
+    const  num1 = (req.body.num1)
+    const  num2 = (req.body.num2)
+    const  num3 = (req.body.num3)  
+    const  num4 = (req.body.num4)
+    const  num5 = (req.body.num5)
+    res.send({media:(num1 + num2 + num3 + num4 + num5)/5})
+    
 
 
 /*
